@@ -1,0 +1,26 @@
+type Query {
+    firstQuery : String
+    secondQuery(name : String) : String
+    thirdQuery(id : Int) : String
+    findById(id : Int) : StudentResponse
+}
+input Student{
+    firstName : String!
+    age : String
+    gender : String
+    id : String
+}
+
+type StudentResponse{
+    id : Int
+    name : String
+    gender : String
+    stringList : [String]
+    fullName(filter: MyEnumFilter) : String
+}
+enum MyEnumFilter {
+    JAVA,
+    SPRING_BOOT,
+    AWS,
+    ALL
+}
